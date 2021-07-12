@@ -7,11 +7,11 @@ namespace DIO_Series.Classes
 {
     class Serie : EntidadeBase
     {
-        private Genero Genero;
-        private string Titulo;
-        private string Descricao;
-        private int Ano;
-        private bool Excluido;
+        private Genero Genero { get; set; }
+        private string Titulo { get; set; }
+        private string Descricao { get; set; }
+        private int Ano { get; set; }
+        private bool Excluido { get; set; }
 
         public Serie(Genero genero, string titulo, string descricao, int ano, bool excluido)
         {
@@ -22,14 +22,14 @@ namespace DIO_Series.Classes
             Excluido = excluido;
         }
 
-        public Serie(int id, Genero genero, string titulo, string descricao, int ano, bool excluido)
+        public Serie(int id, Genero genero, string titulo, string descricao, int ano)
         {
             Id = id;
             Genero = genero;
             Titulo = titulo;
             Descricao = descricao;
             Ano = ano;
-            Excluido = excluido;
+         
         }
 
         public override string ToString()

@@ -53,6 +53,11 @@ namespace DIO_Series.Classes
             return Id;
         }
 
+        public bool RetornaExcluido()
+        {
+            return Excluido;
+        }
+
         public void Exclui()
         {
             Excluido = true;

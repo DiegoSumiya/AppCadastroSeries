@@ -54,7 +54,8 @@ namespace DIO_Series
             }
             foreach(var serie in lista)
             {
-                Console.WriteLine("#ID {0} - {1}", serie.RetornaId(), serie.RetornaTitulo());
+                var excluido = serie.RetornaExcluido();
+                Console.WriteLine("#ID {0} - {1} {2}", serie.RetornaId(), serie.RetornaTitulo(), (excluido ? "Excluído" : ""));
             }
         }
 
@@ -125,7 +126,11 @@ namespace DIO_Series
 
         private static void VizualizarSerie()
         {
+            Console.WriteLine("Digite o id da série: ");
+            int indiceSerie = int.Parse(Console.ReadLine());
 
+            var serie = repositorio.RetornaPorId(indiceSerie);
+            Console.WriteLine(serie);
         }
 
         private static string OpcaoUsuario()
